@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura Eyes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'aura-dark-blue': '#1A237E',
+              'aura-soft-gray': '#F5F5F5',
+              'aura-green': '#A5D6A7',
+              'aura-dark-amber': '#4E342E',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'eye-circle': 'eyeCircle 8s linear infinite',
+              'focus-shift': 'focusShift 6s ease-in-out infinite alternate',
+              'brightness-pulse': 'brightnessPulse 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              eyeCircle: {
+                '0%': { transform: 'rotate(0deg) translateX(80px) rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg) translateX(80px) rotate(-360deg)' },
+              },
+              focusShift: {
+                '0%, 10%': { transform: 'scale(0.6)', opacity: '0.7' },
+                '40%, 60%': { transform: 'scale(1.2)', opacity: '1' },
+                '90%, 100%': { transform: 'scale(0.6)', opacity: '0.7' },
+              },
+              brightnessPulse: {
+                '0%, 100%': { opacity: 0.2 },
+                '50%': { opacity: 1 },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
